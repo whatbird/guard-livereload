@@ -490,7 +490,8 @@
            }
          }
          if (options.liveCSS) {
-           if (path.match(/\.css$/i)) {
+           if (path.match(/\.s?css$/i)) {
+             path = path.replace(/\.(scss|css\.scss)$/, '.css');
              if (this.reloadStylesheet(path)) {
                return;
              }
